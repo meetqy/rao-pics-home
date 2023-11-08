@@ -1,0 +1,272 @@
+---
+import Layout from '~/layouts/PageLayout.astro';
+
+import Hero from '~/components/widgets/Hero.astro';
+import Note from '~/components/widgets/Note.astro';
+import Features from '~/components/widgets/Features.astro';
+import Steps from '~/components/widgets/Steps.astro';
+import Content from '~/components/widgets/Content.astro';
+import FAQs from '~/components/widgets/FAQs.astro';
+import CallToAction from '~/components/widgets/CallToAction.astro';
+
+const metadata = {
+  title: 'RaoPics — 远程访问 Eagle、Pixcall、Billfish 的素材库',
+  ignoreTitleTemplate: true,
+};
+---
+
+<Layout metadata={metadata}>
+  <!-- Hero Widget ******************* -->
+
+  <Hero
+    actions={[
+      {
+        variant: 'primary',
+        text: '立即下载',
+        href: 'https://github.com/meetqy/rao-pics/releases',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+      { text: 'Github 源码', href: 'https://github.com/meetqy/rao-pics', target: '_blank' },
+    ]}
+  >
+    <Fragment slot="image">
+      <video autoplay loop controls src={'/hero.mp4'} class="mx-auto w-full rounded-lg bg-gray-500 shadow-lg"></video>
+    </Fragment>
+    <Fragment slot="title">
+      帮助你<span class="text-accent dark:text-white highlight">远程访问</span> Eagle、 Pixcall、Billfish 的素材资源
+    </Fragment>
+  </Hero>
+
+  <!-- Note Widget ******************* -->
+
+  <Note />
+
+  <!-- Features Widget *************** -->
+
+  <Features
+    id="features"
+    title="有哪些特色功能 ？"
+    subtitle="用最简单的方式，远程访问素材"
+    items={[
+      {
+        title: '30 多种配色',
+        description: '30 多种配色随意切换，还可以自定义主题，总有一款适合你',
+        icon: 'tabler:color-swatch',
+      },
+      {
+        title: '快速同步',
+        description: '增量更新和实时同步，速度很快，无需等待',
+        icon: 'tabler:brand-speedtest',
+      },
+      {
+        title: '安全可靠',
+        description: '不会修改你的任何文件，通过读取生成索引，即使误操作，也不会对元数据造成任何伤害',
+        icon: 'tabler:brand-sentry',
+      },
+      {
+        title: '简单易用',
+        description: '很简单，你只需要点点点，就可以在其他设备上查看素材',
+        icon: 'tabler:asterisk-simple',
+      },
+      {
+        title: '多平台支持',
+        description: '同时支持手机、平板、PC',
+        icon: 'tabler:device-desktop',
+      },
+      {
+        title: '无依赖',
+        description: '无需依赖管理软件，也能访问素材，甚至可以部署在 Windows/MacOS 服务器上',
+        icon: 'tabler:album',
+      },
+    ]}
+  />
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    id="introduces"
+    isReversed
+    title="用最简单的方式，远程访问素材"
+    tagline="唯一目标"
+    items={[
+      {
+        title: '操作简单',
+        description: '针对普通用户设计，点击按钮，快速访问素材。',
+      },
+      {
+        title: '无依赖',
+        description: '直接安装使用，没有任何依赖。',
+      },
+    ]}
+    image={{
+      src: '/preview.png',
+      alt: 'preview image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        <span class="text-primary">2 步，</span> 快速访问素材
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isAfterContent
+    items={[
+      {
+        title: '配色丰富',
+        description: `30+ 配色，随意切换，还会不定期新增配色，总会有你喜欢的不是吗 ？`,
+      },
+      {
+        title: '不只是 App',
+        description: `这些配色还能应用到网页展示上。`,
+      },
+      {
+        title: '基于 DasiyUI',
+        description: `拥有更多可能，未来甚至可以自己编辑配色。`,
+      },
+    ]}
+    image={{
+      src: '/colors.png',
+      alt: '30+ 配色，随意切换',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        同步方案 <span class="text-primary">30+</span>
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Content Widget **************** -->
+
+  <Content
+    isReversed
+    isAfterContent
+    items={[
+      {
+        title: '自动同步',
+        description: '整理完素材，打开网页就能看到最新的。',
+      },
+      {
+        title: '手动同步',
+        description: '整理完素材，可自由选择是否需要同步，点击同步按钮开始同步。',
+      },
+    ]}
+    image={{
+      src: '/sync.png',
+      alt: 'Astronauts Image',
+    }}
+  >
+    <Fragment slot="content">
+      <h3 class="text-2xl font-bold tracking-tight dark:text-white sm:text-3xl mb-2">
+        2 种，<span class="text-primary">同步</span>方式
+      </h3>
+    </Fragment>
+
+    <Fragment slot="bg">
+      <div class="absolute inset-0 bg-blue-50 dark:bg-transparent"></div>
+    </Fragment>
+  </Content>
+
+  <!-- Steps Widget ****************** -->
+
+  <Steps
+    title="如何开始远程访问素材呢 ？"
+    id="uses"
+    items={[
+      {
+        title: '第一步：<span class="font-medium">下载安装 App</span>',
+        description: '选择对应系统的安装包，Windows、MacOS Inter、MacOS ARM。',
+        icon: 'tabler:package',
+      },
+      {
+        title: '第二步：<span class="font-medium">选择资源库</em>',
+        description: '选择对应的资源库，点击同步按钮，开始同步。',
+        icon: 'tabler:letter-case',
+      },
+      {
+        title: '远程访问',
+        description: '点击链接或手机扫码，就能看到素材资源啦。',
+        icon: 'tabler:check',
+      },
+    ]}
+    image={{
+      src: '/visit-retro.png',
+      alt: 'Steps image',
+    }}
+  />
+
+  <!-- FAQs Widget ******************* -->
+
+  <FAQs
+    title="常见问题"
+    subtitle="一些常见的问题，希望能解答你的疑惑。"
+    tagline="FAQs"
+    id="faqs"
+    classes={{ container: 'max-w-6xl' }}
+    items={[
+      {
+        title: '为什么只支持 Eagle ？',
+        description:
+          '目前还在测试版本，作者对 Eagle 相对熟悉一些，所以会优先支持 Eagle，核心内容完成之后，会跟进其他软件。',
+      },
+      {
+        title: '会支持选择修改吗 ？',
+        description: '不会，我们的定位很清晰，专注于远程访问这个方向，所有的功能也会围绕着它来设计和开发。',
+      },
+      {
+        title: '为什么不把重心放在 Docker 版本上 ？',
+        description:
+          '我们的目标是「用最简单的方式，远程访问素材」很显然 Docker 不是最简单的方式。使用 Docker 需要一定的技术基础，这些都不是普通用户能接受的。所以，重心一定会是在 App 上，如果非常喜欢 Docker 版本，可以自己动手，或者等待社区的贡献，或使用 PicHome。',
+      },
+      {
+        title: '未来会收费吗 ？',
+        description:
+          'Eagle 的支持是免费的，并且会一直维护下去。其他软件的支持，会有收费版本。毕竟，靠发电的方式去维护一款软件，不是良性的运营方式。',
+      },
+      {
+        title: '会对我的素材造成影响吗 ？',
+        description: '不会，软件未对素材进行任何修改。并且以后也不会，只会读取提供远程访问所需数据。',
+      },
+      {
+        title: '能定制开发吗 ？',
+        description:
+          '可以，不过收费会很贵，即使一个看起来简单的需求，可能也会比想象中的贵。请做好心里准备再与我联系，避免浪费彼此时间。',
+      },
+    ]}
+  />
+
+  <!-- CallToAction Widget *********** -->
+
+  <CallToAction
+    actions={[
+      {
+        variant: 'primary',
+        text: '立即下载',
+        href: 'https://github.com/meetqy/rao-pics/releases',
+        target: '_blank',
+        icon: 'tabler:download',
+      },
+    ]}
+  >
+    <Fragment slot="title">
+      <p class="flex justify-center items-center">
+        <img src="/icon_512x512.png" class="w-20 h-20 shadow-lg rounded-full" />
+      </p>
+    </Fragment>
+
+    <Fragment slot="subtitle">快速远程访问素材，还在等什么，赶紧下载体验吧 !</Fragment>
+  </CallToAction>
+</Layout>
